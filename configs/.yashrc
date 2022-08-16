@@ -1,0 +1,48 @@
+##### Sample Yashrc #####
+# This is a sample initialization script for yash. Copy this file to ~/.yashrc
+# and add your favorite customization to it.
+
+
+# Firstly, load the common customization script.
+# If you don't like settings applied in this script, remove this line.
+. --autoload --no-alias initialization/common
+
+# These are additional aliases that are not defined in the common script.
+# Uncomment to enable them.
+alias get='sudo xbps-install'
+alias remove='sudo xbps-remove'
+alias search='sudo xbps-query -Rs'
+#alias --global L='|$PAGER'
+#alias --global N='>/dev/null 2>&1' N1='>/dev/null' N2='2>/dev/null'
+
+# Uncomment to enable direnv support. (jq required)
+#_update_direnv() {
+#  eval "$(
+#    direnv export json |
+#    jq -r 'to_entries | .[] |
+#    if .value == null then
+#      @sh "unset \(.key)"
+#    else
+#      @sh "export \(.key)=\(.value)"
+#    end'
+#  )"
+#}
+#_update_direnv
+#YASH_AFTER_CD=("$YASH_AFTER_CD" '_update_direnv')
+
+# And add your own customization below.
+
+
+
+# vim: set et sw=2 sts=2 tw=78 ft=sh:
+
+# Import colorscheme from 'wal' asynchronously
+# &   # Run the process in the background.
+# ( ) # Hide shell job control messages.
+# Not supported in the "fish" shell.
+(cat ~/.cache/wal/sequences &)
+
+# Alternative (blocks terminal for 0-3ms)
+cat ~/.cache/wal/sequences
+
+# To add support for TTYs this line can be optionally added.
