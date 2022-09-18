@@ -13,10 +13,10 @@ static const char *fonts[]          = { "SpaceMono:size=10" };
 static const char dmenufont[]       = "SpaceMono:size=10";
 /* colors */
 static char normfgcolor[]                = "#ebdbb2";
-static char normbgcolor[]                = "#4D3C83";
+static char normbgcolor[]                = "#2E1327"; /* bg */
 static char normbordercolor[]            = "#928374";
-static char selfgcolor[]                 = "#4D3C83";
-static char selbordercolor[]             = "#DE5B56";
+static char selfgcolor[]                 = "#2E1327";
+static char selbordercolor[]             = "#E05711"; /* fg */
 
 static const char *colors[][3] 	    = {
 	[SchemeNorm] = { normfgcolor,	normbgcolor,	normbordercolor    },  
@@ -55,7 +55,7 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbordercolor, "-sf", selfgcolor, "-b", NULL };
-static const char *termcmd[]  = { "alacritty", NULL };
+static const char *termcmd[]  = { "kitty", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
